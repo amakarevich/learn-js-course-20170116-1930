@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <script>
+    'use strict';
+
+    // Функция pow(x,n) (важность: 4)
+    // Напишите функцию pow(x,n), которая возвращает x в степени n.
+    // Иначе говоря, умножает x на себя n раз и возвращает результат.
+    // В этой задаче функция обязана поддерживать только натуральные значения n, т.е. целые от 1 и выше.
+    
+    /**
+     * Возводит число в степень
+     * @param {Number} num Число для возведения в степерь
+     * @param {Number} degree Степень
+     * @returns {Number} Число возведенное в степень
+     */
+    function pow1(num, degree) {
+      return num**degree;
+    }
+    
+    /**
+     * Возводит число в степень
+     * @param {Number} num Число для возведения в степерь
+     * @param {Number} degree Степень
+     * @returns {Number} Число возведенное в степень
+     */
+    function pow(num, degree) {
+      var result = num;
+
+      for (var i = 1; i < degree; i++) {
+        result *= num;
+      }
+
+      return result;
+    }
+    
+    var num = prompt('Введите число' , '1');
+    var degree = prompt('Введите степень, в которую надо возвести число', '1');
+
+    if (degree < 1) {
+      alert('Степень ' + degree + ' не поддерживается. Введите числе больше 1.');
+    } else {
+      alert(num + ' в степени ' + degree + ' = ' + pow1(num, degree) + '\n'
+        + num + ' в степени ' + degree + ' = ' + pow(num, degree));
+      
+    }
+
+    
+  </script>
+</body>
+
+</html>
